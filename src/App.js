@@ -223,7 +223,9 @@ function App() {
          console.log('newRTCSession', data.session.connection.getRemoteStreams())
       })
       window.addEventListener("beforeunload", (ev) => {
-         handleEndSession();
+         if (sessionCall != null) {
+            handleEndSession();
+         }
          return true;
       });
 
@@ -236,17 +238,17 @@ function App() {
          {!callMode ? (
             <Container>
                <Inner>
-                     {option === 'call' ? (
-                        <Phone
-                           calling={calling}
-                           clickCall={startPhoneCall}
-                           setValueInput={setValueInput}
-                           valueInput={valueInput}
-                        />
-                     ) : (
-                        <History data={dataLogs} />
-                     )}
-                     <Option setOption={setOption} />
+                  {option === 'call' ? (
+                     <Phone
+                        calling={calling}
+                        clickCall={startPhoneCall}
+                        setValueInput={setValueInput}
+                        valueInput={valueInput}
+                     />
+                  ) : (
+                     <History data={dataLogs} />
+                  )}
+                  <Option setOption={setOption} />
                </Inner>
             </Container>
          ) : (
