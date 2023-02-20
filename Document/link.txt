@@ -1,0 +1,20 @@
+==============================
+sudo kill -9 `sudo lsof -t -i:3000`
+
+HTTPS=true npm start
+
+npm install --legacy-peer-deps
+==============================
+
+==============================
+Refer links:
+
+Git
+https://github.com/versatica/tryit-jssip
+https://github.com/versatica/JsSIP
+
+https://docs.google.com/document/d/1kSp4jPKy0914rFJWulps8aJu6jYBUWtbCBuJZaLNXfg/edit
+
+Demo:
+https://tryit.jssip.net/
+==============================
