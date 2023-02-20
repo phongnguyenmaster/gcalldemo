@@ -39,17 +39,13 @@ export default function History({ data }) {
                               display: 'flex',
                               alignItems: 'center'
                            }}>
-                              <div style={{
-                                 width: 20
-                              }}>
-                                 {logCall.timeCall > 0 ?
+                              {logCall.timeCall > 0 ?
 
-                                    <IoCall />
-                                    :
-                                    <IoAlertCircleSharp></IoAlertCircleSharp>
+                                 <IoCall />
+                                 :
+                                 <IoAlertCircleSharp></IoAlertCircleSharp>
 
-                                 }
-                              </div>
+                              }
                               <div style={{
 
                               }} className='phonenumber'>
