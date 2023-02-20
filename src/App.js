@@ -35,7 +35,7 @@ const phoneUA = new JsSIP.UA(configuration); //init class phone
 
 
 function App() {
-   const [valueInput, setValueInput] = useState('0977254157');
+   const [valueInput, setValueInput] = useState('');
    const [callMode, setCallMode] = useState(false);
    const [option, setOption] = useState('call');
    const [userHistory, setUserHistory] = useState(null);
