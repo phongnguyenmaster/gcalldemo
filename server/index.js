@@ -1,3 +1,13 @@
+
+var fs = require('fs');
+var https = require('https');
+
+var certificate = fs.readFileSync('/etc/letsencrypt/live/tpcore.vn/cert.pem', 'utf8');
+var privateKey  = fs.readFileSync('/etc/letsencrypt/live/tpcore.vn/privkey.pem', 'utf8');
+var credentials = {key: privateKey, cert: certificate};
+
+
+
 const express = require('express')
 const cors = require('cors')
 const db = require('./config/db')
@@ -15,5 +25,8 @@ route(app);
 
 // Connect db
 db.connect()
+
+var httpsServer = https.createServer(credentials, app);
+
 //Listen
-app.listen(port)
+httpsServer.listen(port)

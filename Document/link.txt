@@ -5,9 +5,11 @@ Deploy
 sudo kill -9 `sudo lsof -t -i:3000`
 rm -R folder-name
 
-HTTPS=true npm start
-
 npm install --legacy-peer-deps
+
+sudo ufw allow 3000/tcp
+sudo ufw allow 5001/tcp
+
 ==============================
 
 

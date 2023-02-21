@@ -14,7 +14,7 @@ export default function Phone({ clickCall, setValueInput, valueInput, calling })
                placeholder='Nhập số điện thoại'
                value={valueInput}
                className="input"
-               autoFocus="true"
+               autoFocus
                type="text"
                onChange={(e) => {
                   setValueInput(e.target.value.replace(/\D/g, ''));
