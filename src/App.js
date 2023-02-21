@@ -14,8 +14,8 @@ import audioPlayer from './audioPlayer';
 const socket = new JsSIP.WebSocketInterface('wss://sbc03.tel4vn.com:7444');
 socket.via_transport = 'auto';
 
-const user = '105';
-const pass = 'test1105';
+const user = '101';
+const pass = 'test1101';
 const userAgent = JsSIP.version;
 const configuration = {
    uri: `sip:${user}@2-test1.gcalls.vn:50061`,
