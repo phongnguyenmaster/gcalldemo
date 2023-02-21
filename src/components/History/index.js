@@ -66,9 +66,7 @@ export default function History({ data }) {
                            justifyContent: 'space-between',
                         }}>
 
-                           {moment(logCall.createdAt).format('DD/MM/Y HH:mm')}
-                           {' '}
-                           <IoTimeOutline></IoTimeOutline>
+                           {moment(logCall.createdAt).format('DD/MM/Y HH:mm')} {' '} <IoTimeOutline></IoTimeOutline>
                         </div>
                      </div>
 

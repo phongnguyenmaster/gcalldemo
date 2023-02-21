@@ -16,7 +16,6 @@ export const logCallSlice = createSlice({
 
 });
 export const getLog = (payload) => async (dispatch, getState) => {
-  console.log(process.env.REACT_APP_DATABASE_URL + "/api/logs/getAll");
   axios.get(
     process.env.REACT_APP_DATABASE_URL + "/api/logs/getAll"
   ).then(result => {
@@ -29,8 +28,6 @@ export const getLog = (payload) => async (dispatch, getState) => {
   });
 }
 export const saveLog = (payload) => async (dispatch, getState) => {
-  console.log(process.env.REACT_APP_DATABASE_URL + "/api/logs/addLog");
-  console.log(payload);
   axios.post(
     process.env.REACT_APP_DATABASE_URL + "/api/logs/addLog",
     {

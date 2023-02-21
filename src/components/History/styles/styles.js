@@ -20,6 +20,7 @@ export const Frame = styled.div`
         display: flex;
         .phonenumber {
             font-size: 18px;
+            padding-left: 8px;
         }
     }
 `

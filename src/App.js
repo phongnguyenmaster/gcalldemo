@@ -38,7 +38,6 @@ function App() {
    const [valueInput, setValueInput] = useState('');
    const [callMode, setCallMode] = useState(false);
    const [option, setOption] = useState('call');
-   const [userHistory, setUserHistory] = useState(null);
    const [status, setStatus] = useState('');
    const dispatch = useDispatch();
 
@@ -51,36 +50,10 @@ function App() {
 
    const [calling, setCalling] = useState(false);
 
-   // 'peerconnection': PeerConnectionListener;
-   // 'connecting': ConnectingListener;
-   // 'sending': SendingListener;
-   // 'progress': CallListener;
-   // 'accepted': CallListener;
-   // 'confirmed': ConfirmedListener;
-   // 'ended': EndListener;
-   // 'failed': EndListener;
-   // 'newDTMF': DTMFListener;
-   // 'newInfo': InfoListener;
-   // 'hold': HoldListener;
-   // 'unhold': HoldListener;
-   // 'muted': MuteListener;
-   // 'unmuted': MuteListener;
-   // 'reinvite': ReInviteListener;
-   // 'update': UpdateListener;
-   // 'refer': ReferListener;
-   // 'replaces': ReferListener;
-   // 'sdp': SDPListener;
-   // 'icecandidate': IceCandidateListener;
-   // 'getusermediafailed': Listener;
-   // 'peerconnection:createofferfailed': Listener;
-   // 'peerconnection:createanswerfailed': Listener;
-   // 'peerconnection:setlocaldescriptionfailed': Listener;
-   // 'peerconnection:setremotedescriptionfailed': Listener;
    const eventHandlers = {
-      // connecting: function (e) {
-      //    setStatus('Connecting');
-
-      // },
+      connecting: function (e) {
+         setStatus('Connecting');
+      },
       progress: function () {
          setStatus('Ringing');
       },
@@ -124,7 +97,7 @@ function App() {
       mediaConstraints:
       {
          audio: true,
-         video: true
+         video: false
       },
       rtcOfferConstraints:
       {
@@ -148,11 +121,8 @@ function App() {
       phoneUA.start();
       const session = phoneUA.call(valueInput.toString(), callOptions);
       session.on('connecting', () => {
-         console.log('connecting', session.connection.getRemoteStreams());
          setSessionCall(session);
       });
-
-      console.log('session', session)
 
       setTimeout(() => {
          setCallMode(true);
@@ -168,7 +138,6 @@ function App() {
             statusCall: _statusCall,
          }
       ))
-      //
    }
 
    const handleEndSession = () => {

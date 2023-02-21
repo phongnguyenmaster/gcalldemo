@@ -11,11 +11,13 @@ export default function Phone({ clickCall, setValueInput, valueInput, calling })
       <>
          <div className="form">
             <input
+               placeholder='Nhập số điện thoại'
                value={valueInput}
                className="input"
+               autoFocus="true"
                type="text"
                onChange={(e) => {
-                  setValueInput(e.target.value.replace(/\D/g,''));
+                  setValueInput(e.target.value.replace(/\D/g, ''));
                }}
             />
          </div>

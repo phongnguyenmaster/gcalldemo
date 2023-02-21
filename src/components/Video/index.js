@@ -6,13 +6,9 @@ export default function Video({ sessionCall }) {
    const localVideo = useRef();
    const handleRemoteStream = () => {
       const peerconnection = sessionCall.connection;
-      const remoteStream = peerconnection.getRemoteStreams()[0];
-      const localStream = peerconnection.getLocalStreams()[0];
-      console.log('localStream', remoteStream);
-      if (localStream) {
-         // Display local stream
-       //  localVideo.current.srcObject = localStream;
-      }
+      // const remoteStream = peerconnection.getRemoteStreams()[0];
+      // const localStream = peerconnection.getLocalStreams()[0];
+
       peerconnection.addEventListener('addstream', (event) => {
          console.log('peerconnection "addstream" event');
          refRemote.current.srcObject = event.stream;
