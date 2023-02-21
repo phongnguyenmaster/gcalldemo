@@ -47,11 +47,11 @@ export const Inner = styled.div`
    .keyboard {
       position: relative;
       width: 300px;
-   }
-   .sc-bcXHqe {
-      width: 80px;
-      height: 80px;
-      border-radius: 100%; 
+      & + button {
+         width: 80px;
+         height: 80px;
+         border-radius: 100%; 
+      }
    }
       .index-module_itemsContainer__CjP0y {
          background-color: transparent;
