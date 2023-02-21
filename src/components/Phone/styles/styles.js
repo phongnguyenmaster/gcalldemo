@@ -62,8 +62,8 @@ export const Inner = styled.div`
          border: none;
          background-color: white;
          border-radius: 100%;
-         width: 80px;
-         height: 80px;
+         width: 75px;
+         height: 75px;
          flex: none;
          margin: 8px;
          p, img {
