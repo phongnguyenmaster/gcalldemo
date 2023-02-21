@@ -143,8 +143,10 @@ function App() {
    const handleEndSession = () => {
       // call api
       phoneUA.stop();
+      if (calling) {
+         handleSaveLog(timesCall, statusCall);
+      }
       setCalling(false);
-      handleSaveLog(timesCall, statusCall);
       setStatusCall(0);
       setSessionCall(null);
       setTimeout(() => {
@@ -192,9 +194,7 @@ function App() {
          console.log('newRTCSession', data.session.connection.getRemoteStreams())
       })
       window.addEventListener("beforeunload", (ev) => {
-         if (sessionCall != null) {
-            handleEndSession();
-         }
+         handleEndSession();
          return true;
       });
 
