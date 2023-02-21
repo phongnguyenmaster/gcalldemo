@@ -1,6 +1,4 @@
-==============================
-Deploy
-
+===Deploy==========
 
 sudo kill -9 `sudo lsof -t -i:3000`
 rm -R folder-name
@@ -12,13 +10,40 @@ sudo ufw allow 5001/tcp
 
 git reset --hard
 git pull origin main
-==============================
+
+
+[program:staging-demogcall-client]
+process_name=%(program_name)s_%(process_num)02d
+directory=/var/www/tpcore.vn/gcalldemo
+command=npm start
+autostart=true
+autorestart=true
+stopasgroup=true
+killasgroup=true
+stderr_logfile=/var/log/demogcall/staging-demogcall-client.err.log
+stdout_logfile=/var/log/demogcall/staging-demogcall-client.out.log
+numprocs=1
+redirect_stderr=true
+stopwaitsecs=3600
 
 
 
-==============================
-Refer links:
+[program:staging-demogcall-server]
+process_name=%(program_name)s_%(process_num)02d
+directory=/var/www/tpcore.vn/gcalldemo/server
+command=npm start
+autostart=true
+autorestart=true
+stopasgroup=true
+killasgroup=true
+stderr_logfile=/var/log/demogcall/staging-demogcall-server.err.log
+stdout_logfile=/var/log/demogcall/staging-demogcall-server.out.log
+numprocs=1
+redirect_stderr=true
+stopwaitsecs=3600
 
+
+======Refer link=======
 Git
 https://github.com/versatica/tryit-jssip
 https://github.com/versatica/JsSIP
@@ -27,5 +52,3 @@ https://docs.google.com/document/d/1kSp4jPKy0914rFJWulps8aJu6jYBUWtbCBuJZaLNXfg/
 
 Demo:
 https://tryit.jssip.net/
-
-==============================
