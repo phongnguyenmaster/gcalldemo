@@ -10,6 +10,8 @@ npm install --legacy-peer-deps
 sudo ufw allow 3000/tcp
 sudo ufw allow 5001/tcp
 
+git reset --hard
+git pull origin main
 ==============================
 
 

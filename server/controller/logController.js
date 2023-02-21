@@ -3,10 +3,13 @@ const crypto = require('crypto');
 
 class LogsController {
 
-    getAll(req, res, next) {
-        return LogsModel.find({}).sort({ createdAt: 'descending' })
-            .then((logs) => res.status(200).json(logs))
-            .catch((error) => next(error));
+    async getAll(req, res, next) {
+        try {
+            const logs = await LogsModel.find({}).sort({ createdAt: 'descending' });
+            return res.status(200).json(logs);
+        } catch (error) {
+            return next(error);
+        }
     }
 
     addLog = async (req, res, next) => {

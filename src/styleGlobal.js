@@ -51,7 +51,7 @@ body {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-::placeholder {
+input::placeholder {
   color: #9e9e9e;
   opacity: 1; /* Firefox */
 }

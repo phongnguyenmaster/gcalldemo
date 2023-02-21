@@ -21,7 +21,7 @@ export default function Video({ sessionCall }) {
    }, [sessionCall])
    return (
       <VideoContainer>
-         <video ref={localVideo} id="selfView" autoPlay ></video>
+         <video ref={localVideo} id="selfView" autoPlay></video>
          <video
             ref={refRemote}
             id={'remoteVideo'}

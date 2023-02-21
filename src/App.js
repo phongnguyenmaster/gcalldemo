@@ -191,7 +191,7 @@ function App() {
 
       // TODO: incoming call
       phoneUA.on('newRTCSession', (data) => {
-         console.log('newRTCSession', data.session.connection.getRemoteStreams())
+         //console.log('newRTCSession', data.session.connection.getRemoteStreams())
       })
       window.addEventListener("beforeunload", (ev) => {
          handleEndSession();
