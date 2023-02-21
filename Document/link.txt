@@ -1,10 +1,16 @@
 ==============================
+Deploy
+
+
 sudo kill -9 `sudo lsof -t -i:3000`
+rm -R folder-name
 
 HTTPS=true npm start
 
 npm install --legacy-peer-deps
 ==============================
+
+
 
 ==============================
 Refer links:
@@ -17,4 +23,5 @@ https://docs.google.com/document/d/1kSp4jPKy0914rFJWulps8aJu6jYBUWtbCBuJZaLNXfg/
 
 Demo:
 https://tryit.jssip.net/
+
 ==============================
